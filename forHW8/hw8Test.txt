@@ -1,0 +1,235 @@
+Script started on Sat 23 Nov 2019 04:29:08 PM PST
+]0;ahmed021@empress:~/cs311/HWPrograms/forHW8[?1034h[ahmed021@empress forHW8]$ g++ *.cpp
+]0;ahmed021@empress:~/cs311/HWPrograms/forHW8[ahmed021@empress forHW8]$ ./a.out
+Enter key to add to table: 300
+Enter name to add to table: mary
+
+There are currently 1 keys and names in the table
+Enter 0 to stop adding elements to table
+To continue adding elements to table enter 1: 1
+
+Enter key to add to table: 301
+Enter name to add to table: paul
+
+There are currently 2 keys and names in the table
+Enter 0 to stop adding elements to table
+To continue adding elements to table enter 1: 1
+
+Enter key to add to table: 337
+Enter name to add to table: olivia
+
+There are currently 3 keys and names in the table
+Enter 0 to stop adding elements to table
+To continue adding elements to table enter 1: 1
+
+Enter key to add to table: 338
+Enter name to add to table: alex
+
+There are currently 4 keys and names in the table
+Enter 0 to stop adding elements to table
+To continue adding elements to table enter 1: 1
+
+Enter key to add to table: 200
+Enter name to add to table: nate
+
+There are currently 5 keys and names in the table
+Enter 0 to stop adding elements to table
+To continue adding elements to table enter 1: 1
+
+Enter key to add to table: 237
+Enter name to add to table: emily
+
+There are currently 6 keys and names in the table
+Enter 0 to stop adding elements to table
+To continue adding elements to table enter 1: 1
+
+Enter key to add to table: 201
+Enter name to add to table: ian
+
+There are currently 7 keys and names in the table
+Enter 0 to stop adding elements to table
+To continue adding elements to table enter 1: 1
+
+Enter key to add to table: 238
+Enter name to add to table: jake
+
+There are currently 8 keys and names in the table
+Enter 0 to stop adding elements to table
+To continue adding elements to table enter 1: 1
+
+Enter key to add to table: 600
+Enter name to add to table: elizabeth
+
+There are currently 9 keys and names in the table
+Enter 0 to stop adding elements to table
+To continue adding elements to table enter 1: 1
+
+Enter key to add to table: 637
+Enter name to add to table: emma
+
+There are currently 10 keys and names in the table
+Enter 0 to stop adding elements to table
+To continue adding elements to table enter 1: 1
+
+Enter key to add to table: 601
+Enter name to add to table: riley
+
+There are currently 11 keys and names in the table
+Enter 0 to stop adding elements to table
+To continue adding elements to table enter 1: 1
+
+Enter key to add to table: 638
+Enter name to add to table: linda
+
+There are currently 12 keys and names in the table
+Enter 0 to stop adding elements to table
+To continue adding elements to table enter 1: 1
+
+Enter key to add to table: 700
+Enter name to add to table: gina
+
+There are currently 13 keys and names in the table
+Enter 0 to stop adding elements to table
+To continue adding elements to table enter 1: 1
+
+Enter key to add to table: 100
+Enter name to add to table: kate
+
+There are currently 14 keys and names in the table
+Enter 0 to stop adding elements to table
+To continue adding elements to table enter 1: 1
+
+Enter key to add to table: 101
+Enter name to add to table: james
+
+There are currently 15 keys and names in the table
+Enter 0 to stop adding elements to table
+To continue adding elements to table enter 1: 1
+
+Enter key to add to table: 500
+Enter name to add to table: jenna
+
+There are currently 16 keys and names in the table
+Enter 0 to stop adding elements to table
+To continue adding elements to table enter 1: 1
+
+Enter key to add to table: 537
+Enter name to add to table: charles
+
+There are currently 17 keys and names in the table
+Enter 0 to stop adding elements to table
+To continue adding elements to table enter 1: 1
+
+Enter key to add to table: 501
+Enter name to add to table: heidi
+
+There are currently 18 keys and names in the table
+Enter 0 to stop adding elements to table
+To continue adding elements to table enter 1: 1
+
+Enter key to add to table: 538
+Enter name to add to table: shay
+
+There are currently 19 keys and names in the table
+Enter 0 to stop adding elements to table
+To continue adding elements to table enter 1: 1
+
+Enter key to add to table: 400
+Enter name to add to table: harry
+
+There are currently 20 keys and names in the table
+Enter 0 to stop adding elements to table
+To continue adding elements to table enter 1: 1
+
+Enter key to add to table: 401
+Enter name to add to table: maya
+
+There are currently 21 keys and names in the table
+Enter 0 to stop adding elements to table
+To continue adding elements to table enter 1: 1
+
+Enter key to add to table: 437
+Enter name to add to table: julia
+
+There are currently 22 keys and names in the table
+Enter 0 to stop adding elements to table
+To continue adding elements to table enter 1: 0
+
+0:[ empty ]
+1:[ empty ]
+2:[ empty ]
+3:[ empty ]
+4:[ 300+mary 337+olivia ]
+5:[ 301+paul 338+alex ]
+6:[ empty ]
+7:[ empty ]
+8:[ 600+elizabeth 637+emma ]
+9:[ 601+riley 638+linda ]
+10:[ empty ]
+11:[ empty ]
+12:[ empty ]
+13:[ empty ]
+14:[ empty ]
+15:[ 200+nate 237+emily ]
+16:[ 201+ian 238+jake ]
+17:[ empty ]
+18:[ empty ]
+19:[ 500+jenna 537+charles ]
+20:[ 501+heidi 538+shay ]
+21:[ empty ]
+22:[ empty ]
+23:[ empty ]
+24:[ empty ]
+25:[ empty ]
+26:[ 100+kate ]
+27:[ 101+james ]
+28:[ empty ]
+29:[ empty ]
+30:[ 400+harry 437+julia ]
+31:[ 401+maya ]
+32:[ empty ]
+33:[ empty ]
+34:[ 700+gina ]
+35:[ empty ]
+36:[ empty ]
+Look for? 300
+Found 300: 300+mary
+
+Enter 0 to stop searching and end program
+To continue searching enter 1: 1
+Look for? 200
+Found 200: 200+nate
+
+Enter 0 to stop searching and end program
+To continue searching enter 1: 1
+Look for? 238
+Found 238: 238+jake
+
+Enter 0 to stop searching and end program
+To continue searching enter 1: 1
+Look for? 36
+36 was not found.
+
+Enter 0 to stop searching and end program
+To continue searching enter 1: 1
+Look for? 700
+Found 700: 700+gina
+
+Enter 0 to stop searching and end program
+To continue searching enter 1: 1
+Look for? 99
+99 was not found.
+
+Enter 0 to stop searching and end program
+To continue searching enter 1: 1
+Look for? 437
+Found 437: 437+julia
+
+Enter 0 to stop searching and end program
+To continue searching enter 1: 0
+
+Ending program
+]0;ahmed021@empress:~/cs311/HWPrograms/forHW8[ahmed021@empress forHW8]$ exit
+exit
+
+Script done on Sat 23 Nov 2019 04:33:23 PM PST

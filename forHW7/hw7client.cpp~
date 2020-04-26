@@ -1,0 +1,64 @@
+//==========================================
+// HW#: HW7 DFS client using dgraph.h
+// Name: Asma Ahmed
+// File type: client hw7client.cpp 
+//==========================================
+
+// ** Be sure to include dgraph, slist and stack
+#include <iostream>
+#include "dgraph.h"
+#include "stack.h"
+using namespace std;
+
+// This client uses the dgraph class and stack class
+// to do depth first traversal of the graph stored in table.txt
+int main()
+{
+  // ** copy here the algorithm (read carefully) in the HW7
+  // assignment sheet and use that has the comments. 
+  dgraph G;
+  G.fillTable();
+  G.displayGraph();
+  slist List;
+  stack S;
+  int visitNum = 1;
+  char vertex = 'A';
+
+  S.push(vertex);
+
+  while(!S.isEmpty())
+    {
+      S.pop(vertex);
+      cout << "Removed " << vertex << " from stack" << endl;
+      
+      if(G.isMarked(vertex) == 0)
+	{
+	  G.visit(visitNum, vertex);
+	  cout << "Visit " << vertex << " as " << visitNum << endl;
+	  List = G.findAdjacency(vertex);
+	  if(List.isEmpty())
+	    {
+	      cout << "Deadend reached - backup" << endl;
+	    }
+	  else
+	    {
+	      cout << "... pushing ";
+	      List.displayAll();
+	      while(!List.isEmpty())
+	      {
+		List.deleteRear(vertex);
+		S.push(vertex);
+	      }
+	    }
+	  visitNum++;
+	  
+	}
+      else 
+	{
+	  cout << vertex << " has been visited already - backup" << endl;
+	}
+      cout << "Stack is: " << endl;
+      S.displayAll();
+    }
+  G.displayGraph();
+}

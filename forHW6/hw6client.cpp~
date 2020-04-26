@@ -1,0 +1,50 @@
+// CS311 Yoshii
+// HW6 Client file 
+//INSTRUCTION: Complete this file and comment using How to Comment file.
+//---------------------------------------------
+
+// ================================================
+// HW#: HW6 dgraph client 
+// Name: Asma Ahmed
+// File type:  **  (tester)
+// ================================================
+#include <iostream>
+#include "dgraph.h"
+using namespace std;
+//**
+int main()
+{ 
+  dgraph G; //Declare table object
+  G.fillTable();
+  G.displayGraph();
+  slist l1;
+  char c;
+  cout << "Enter a vertex name or character Z to exit: ";
+  cin >> c;
+  while (c != 'Z' && c != 'z')
+    {
+      try
+	{
+	  //findOutDegree of the vertex and display the result
+	  cout << G.findOutDegree(c) << "edges go out." << endl;
+	  //findAdjacency of the vertex and display the result (see Hint)
+	  l1 = G.findAdjacency(c);
+	  l1.displayAll();
+	}
+      //catch exception to display error mesg but do not exit
+      catch(dgraph::BadVertex)
+	{
+	  cerr << "No such vertex exists." << endl;
+	}
+      cout << "Enter a vertex name or character Z to exit: ";
+      cin >> c;
+    }
+}
+
+/*
+Hint:
+  slist l1;
+  l1 = G.findAdjacency('a');
+  // how do you display l1?  Hint: it is an slist from HW3.
+
+*/

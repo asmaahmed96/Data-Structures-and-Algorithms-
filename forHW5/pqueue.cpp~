@@ -1,0 +1,167 @@
+// CS311 Yoshii - HW5 Priority Queue Implementation File
+// Complete all ** parts and give good comments
+
+// =================================================
+// HW5 Priority Printer Queue 
+// YOUR NAME: Asma Ahmed
+// File Type: implementation pqueue.cpp
+// =================================================
+
+#include "pqueue.h"
+
+// constructor
+pqueue::pqueue()
+{  count = 0;  // no jobs yet
+}
+
+// destructor does nothing
+pqueue::~pqueue() {}
+
+// Purpose: to add a job to a right place in the Pqueue
+// Argument: j is the job priority number
+void pqueue::insertjob(int j)
+{
+  cout << "Adding: " << j << endl;
+  if(count < MAX)
+    {
+      Q[count] = j;  // ** add the job j at the rear (and update count)
+      count++;
+    }
+  else// if possible else display error message. 
+    {
+      cout << "cannot add...FULL!" << endl;
+    }  
+
+  trickleup(); // moves the job to the right place
+}
+
+// Purpose: to print a job and reheapify the Pqueue
+void pqueue::printjob()
+{
+  cout << "Printing: " << Q[0] <<endl;
+  reheapify(); 
+}
+
+// Purpose: to display all jobs
+void pqueue::displayAll()
+{ cout << "Jobs: " ;
+  // ** loop to display jobs from slot 0 to slot count-1 horizontally. No need to show a tree format.
+  for(int i = 0; i <= (count-1); i++)
+    {
+      cout  << Q[i] << " ";
+    }  
+  cout << endl;
+  
+  int j = 1 , bin = 1; //bin is # of indexes at each level of tree, j holds current index in bin
+  for(int k = 0; k < count - bin; k++) //prints spaces to align root
+    cout << " ";
+  for(int i = 0; i < count; i++) //print all data members like a tree
+    {
+      cout << Q[i] << " "; //print ith member
+      if(j == bin) //bin has been traversed
+	{
+	  bin = bin * 2; //increase bin size by factor of 2
+	  j = 0; //move j to the first index of the bin
+	  cout << endl; //end current line and continue printing on next line
+	  for(int k = 0; k < count - bin; k++) //indent for next line
+	    cout << " ";
+	}
+      j++; //increment bin index after print
+    }
+  cout << endl; //end line after loop*/
+} 
+
+
+// Utility functions follow: ------------------
+
+void pqueue::swap(int loc1, int loc2)
+{
+  int temp =  Q[loc1];  // ** swap the values in these locations in Q
+  Q[loc1] = Q[loc2];
+  Q[loc2] = temp;
+}
+
+// Purpose: to make the very last job trickle up to the right location 
+void pqueue::trickleup()
+{ 
+  int x = count-1;  // the very last job's location
+  while(x > 0) // ** While x is > 0   
+    {  
+      int p = getParent(x); //(*) Call getParent to get the location of the parent based on the child's location.      
+      if(Q[p] > Q[x]) //compare Q[x] with the parent (*) and if the parent is bigger swap & update x to be the parent . Otherwise stop the loop.
+	{
+	  swap(x, p);
+	  x = p;
+	}
+      else 
+	{
+	  return;
+	}
+    }
+}
+
+// Purpose: find the location of the parent 
+// The child location is given.  Need to call even.
+int pqueue::getParent(int childloc)
+{
+  if(even(childloc))
+    return (childloc-2)/2; //index of child is even so parent is at childs (index/2-1)
+   else 
+    return (childloc-1)/2; //return parents location
+}
+
+// Purpose: is location i even? Important in finding its parent location
+bool pqueue::even(int i)
+{
+  if ((i % 2) ==  0) return true; else return false; 
+}
+
+// Purpose: to reheapify the Pqueue after printing
+//  This trickles down
+void pqueue::reheapify()
+{ int X;   // the current location
+  Q[0] = Q[count-1];  // move the last job to the front
+  count--;
+  // ** Start X at 0 (the root) 
+  //while X is within te array:
+  //find the location of the smaller child
+  //(if the location of both children are off the tree, stop the loop)
+  //if thesmaller child is smaller than the parent
+  //swap and X becomes the smaller child's location
+  // else no swaps so stop the loop.
+  for(X = 0; X < count - 1; X++)  
+    {
+      int smChild = getSmallerchild(X); //Find the location of the smaller child 
+      if(smChild == -1)
+	return;
+      else if(Q[smChild] < Q[X])
+	{
+	  swap(X, smChild);
+	}
+    }
+}
+
+// Purpose: to find the location of the smaller child
+// where children are at locations 2*i+1 and 2*i+2
+int pqueue::getSmallerchild(int i)
+{
+  int leftChild = (2*i)+1; //left child of i will always be at this position
+  int rightChild = (2*i)+2; //right child of i will always be at this position
+// ** return the location of the smaller child
+//Be careful because one or both of them may be
+// beyond count-1. Check boundaries before you
+//compare Q contents!!!! 
+  if(leftChild >= count-1 && rightChild >= count-1) //check to make sure i has children
+    return -1;
+  else if(rightChild >= count-1)
+    return leftChild;
+  else if(leftChild >= count-1)
+    return rightChild;
+  else if(Q[leftChild] < Q[rightChild])
+    return leftChild;  
+  else
+    return rightChild;
+     
+}
+
+
