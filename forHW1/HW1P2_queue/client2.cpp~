@@ -1,0 +1,61 @@
+//CS311 Yoshii
+//INSTRUCTION:
+//Look for ** to complete this program 
+//The string output should match my hw1queueDemo.out 
+
+//=========================================================
+//HW#: HW1P2 queue application (generate all strings)
+//Your name: Asma Ahmed
+//Complier:  g++
+//File type: client program client2.cpp
+//===========================================================
+
+using namespace std;
+#include <iostream>
+#include <stdlib.h>
+#include <string>
+#include "queue.h"
+
+//Purpose of the program: **
+//Algorithm: **
+int main()
+{
+  queue Q; //make a queue
+  // "A", "B", "C" in the queue 
+  Q.add("A");
+  Q.add("B");
+  Q.add("C"); 
+  // ** while loop -- indefinitely
+  while(true)  
+  {
+      try
+	{ 
+	  string x; //local variable that will display the combinations
+
+	  if(!Q.isEmpty())
+	    {
+	      Q.remove(x);
+	    }
+	  cout << x << endl;
+
+	  if(!Q.isFull())
+	    {
+	      Q.add(x + "A");
+	      Q.add(x + "B");
+	      Q.add(x + "C");
+	    }
+	  
+	}
+      catch(queue::Underflow)
+	{
+	  cerr << "ERROR: Not enought phrases to try." ;
+	  exit(1);
+	}
+      catch(queue::Overflow)
+	{
+	  cerr << "ERROR: Queue full. Cannot add phrase.";
+	  exit(1);
+	}// end of loop
+  }
+}
+
